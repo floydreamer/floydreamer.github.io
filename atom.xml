@@ -5,7 +5,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com//"/>
-  <updated>2015-06-25T12:12:30.412Z</updated>
+  <updated>2015-06-25T14:49:36.296Z</updated>
   <id>http://yoursite.com//</id>
   
   <author>
@@ -14,6 +14,116 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[markdwon-intro]]></title>
+    <link href="http://yoursite.com/2015/06/25/markdwon-intro/"/>
+    <id>http://yoursite.com/2015/06/25/markdwon-intro/</id>
+    <published>2015-06-25T14:48:27.000Z</published>
+    <updated>2015-06-25T14:49:36.296Z</updated>
+    <content type="html"><![CDATA[<p>markdown是一种电子邮件风格的语言。它的优点有如下</p>
+<ul>
+<li>纯文本，所以兼容性极强，可以用所有文本编辑器打开。</li>
+<li>让你专注于文字而不是排版。</li>
+<li>格式转换方便，Markdown 的文本你可以轻松转换为 html、电子书等。</li>
+<li>Markdown 的标记语法有极好的可读性。</li>
+</ul>
+<p>正因为如此，它被越来越多地应用在生成电子书，博客编写，制作注释文档上。之前写论文常用latex，用久了也把麻烦当自然，现在看了markdown语法，一对比之下深觉markdown清爽而有美感。某篇文章里说人人都该学习markdown，我想，对于常要写点东西的人，花费几个小时学习的确会给之后节省太多精力。<br>markdown的语法是非常简单的，网上也已有很好的指南，比如<br>一些中文入门 <a href="http://www.yangzhiping.com/tech/r-markdown-knitr.html" target="_blank" rel="external">markdown写作浅谈</a>        <a href="http://www.jianshu.com/p/q81RER" target="_blank" rel="external">markdown新手入门</a><br>以及更详尽的语法 <a href="http://wowubuntu.com/markdown/" target="_blank" rel="external">markdown语法说明</a><br>自己开个帖子记录总结一下经常会用到的语法，方便查阅</p>
+<p>当然，好的编辑器可以省下一些力气。<br>比如说在线的<a href="https://stackedit.io/" target="_blank" rel="external">stackedit</a>   提供即时编译，而且可以同步到dropbox 和googdrive， 或者直接发布到github上<br>本地的editor，<a href="http://markdownpad.com/" target="_blank" rel="external">markdownpad</a>是比较多人推荐的</p>
+<hr>
+<h3 id="区段元素"><strong>区段元素</strong></h3><p>一个 Markdown 段落是由一个或多个连续的文本行组成，它的前后要有一个以上的空行（空行的定义是显示上看起来像是空的，便会被视为空行。比方说，若某一行只包含空格和制表符，则该行也会被视为空行）。普通段落不该用空格或制表符来缩进。<br>在特殊符号和文本之间（比如 # 和 标题）建议保留一个字符的空格，这是最标准的 Markdown 写法。</p>
+<h4 id="标题"><strong>标题</strong></h4><p>在 Markdown 中，你只需要在文本前面加上 # 即可使其变成标题，同理、你还可以增加二级标题、三级标题、四级标题、五级标题和六级标题，总共六级，只需要增加  # 即可，标题字号相应降低。</p>
+<pre><code><span class="preprocessor"># 一级标题</span>
+<span class="preprocessor">## 二级标题</span>
+<span class="preprocessor">### 三级标题</span>
+<span class="preprocessor">#### 四级标题</span>
+<span class="preprocessor">##### 五级标题</span>
+<span class="preprocessor">###### 六级标题</span>
+</code></pre><h4 id="列表"><strong>列表</strong></h4><p>列表格式也很常用，在 Markdown 中，你只需要在文字前面加上 - 就可以了，例如：</p>
+<pre><code>-<span class="ruby"> 文本<span class="number">1</span>
+</span>-<span class="ruby"> 文本<span class="number">2</span>
+</span>-<span class="ruby"> 文本<span class="number">3</span></span>
+</code></pre><ul>
+<li>效果</li>
+</ul>
+<p>你也可以用+ 或者 * 代表无序列表</p>
+<p>如果你希望有序列表，也可以在文字前面加上 1. 2. 3. 就可以了，例如：</p>
+<pre><code><span class="bullet">1. </span>文本1
+<span class="bullet">2. </span>文本2
+<span class="bullet">3. </span>文本3
+</code></pre><ol>
+<li><p>效果</p>
+<h4 id="引用"><strong>引用</strong></h4><p>在引用一行或者一段话的时候，只需要在前面加上一个 &gt;,就像email引文部分一样。</p>
+<blockquote>
+<p>今天是捕香蕉鱼的好日子</p>
+</blockquote>
+</li>
+</ol>
+<blockquote>
+<p>今天是捕香蕉鱼的好日子<br>可以嵌套引用，只需在二层引用的地方多加一个&gt;</p>
+<h4 id="代码区块"><strong>代码区块</strong></h4><p>要在 Markdown 中建立代码区块很简单，只要简单地缩进 4 个空格或是 1 个制表符就可以，例如，下面的输入：</p>
+</blockquote>
+<p>这是一个普通段落：</p>
+<pre><code>这是一个代码区块。
+</code></pre><h4 id="分隔线"><strong>分隔线</strong></h4><p>你可以在一行中用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西。你也可以在星号或是减号中间插入空格。下面每种写法都可以建立分隔线：</p>
+<pre><code><span class="keyword">*</span> <span class="keyword">*</span> <span class="keyword">*</span>
+<span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span>
+<span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span><span class="keyword">*</span>
+- - -
+---------------------------------------
+</code></pre><h3 id="区段元素-1">区段元素</h3><p>在 Markdown 中，插入链接只需要使用 <code>[显示文本](链接地址)</code> 这样的语法即可，例如：</p>
+<pre><code>[<span class="link_label">微博</span>](<span class="link_url">www.weibo.com</span>)
+</code></pre><p>在 Markdown 中，插入图片只需要使用 <code>![](图片链接地址)</code> 这样的语法即可，例如：</p>
+<pre><code>!<span class="attr_selector">[]</span>(<span class="attribute">http</span>:<span class="comment">//ww4.sinaimg.cn/bmiddle/aa397b7fjw1dzplsgpdw5j.jpg)  </span>
+</code></pre><h4 id="强调"><strong>强调</strong></h4><p>Markdown 的粗体和斜体也非常简单，用两个 <em> 包含一段文本就是粗体的语法，用一个 </em> 包含一段文本就是斜体的语法。</p>
+<pre><code><span class="keyword">*</span><span class="keyword">*</span>文本1<span class="keyword">*</span><span class="keyword">*</span> <span class="keyword">*</span>文本2<span class="keyword">*</span>
+</code></pre><p><strong>文本1</strong> <em>文本2</em></p>
+<h4 id="表格"><strong>表格</strong></h4><pre><code>dog |<span class="string"> bird </span>|<span class="string"> cat
+----</span>|<span class="string">------</span>|<span class="string">----
+foo </span>|<span class="string"> foo  </span>|<span class="string"> foo
+bar </span>|<span class="string"> bar  </span>|<span class="string"> bar
+baz </span>|<span class="string"> baz  </span>|<span class="string"> baz</span>
+</code></pre><table>
+<thead>
+<tr>
+<th>dog</th>
+<th>bird</th>
+<th>cat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>foo</td>
+<td>foo</td>
+<td>foo</td>
+</tr>
+<tr>
+<td>bar</td>
+<td>bar</td>
+<td>bar</td>
+</tr>
+<tr>
+<td>baz</td>
+<td>baz</td>
+<td>baz</td>
+</tr>
+</tbody>
+</table>
+<h4 id="反斜杠"><strong>反斜杠</strong></h4><p>有一些特殊符号，如果你并不需要它改变文本格式，可以直接在之前加上反斜杠</p>
+<pre><code>\<span class="keyword">*</span>文本<span class="keyword">*</span>
+</code></pre><p>*文本*</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>markdown是一种电子邮件风格的语言。它的优点有如下</p>
+<ul>
+<li>纯文本，所以兼容性极强，可以用所有文本编辑器打开。</li>
+<li>让你专注于文字而不是排版。</li>
+<li>格式转换方便，Markdown 的文本你可以轻松转换为 html、电子书等]]>
+    </summary>
+    
+      <category term="编程" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[用github 和hexo制作静态博客]]></title>
