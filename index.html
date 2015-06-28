@@ -233,23 +233,49 @@ Enter file <span class="keyword">in</span> which <span class="keyword">to</span>
 Enter same passphrase again:<span class="variable">&lt;再次输入加密串&gt;</span>
 </code></pre><p>在回车中会提示你输入一个密码，这个密码会在你提交项目时使用，如果为空的话提交项目时则不用输入。这个设置是防止别人往你的项目里提交内容。</p>
 <p>注意：输入密码的时候没有*字样的，你直接输入就可以了。</p>
-<p>最后看到这样的界面，就成功设置ssh key了：</p>
-<p>添加SSH Key到GitHub<br>在本机设置SSH Key之后，需要添加到GitHub上，以完成SSH链接的设置。</p>
-<p>1、打开本地C:\Documents and Settings\Administrator.ssh\id_rsa.pub文件。<br>在windows 7下地址是C:\User\用户名.ssh\id_rsa.pub<br>此文件里面内容为刚才生成密钥。如果看不到这个文件，你需要设置显示隐藏文件。准确的复制这个文件的内容，才能保证设置的成功。</p>
-<p>2、登陆github系统。点击右上角的 Account Settings—-&gt;SSH Public keys —-&gt; add another public keys</p>
-<p>3、把你本地生成的密钥复制到里面（key文本框中）， 点击 add key 就ok了</p>
+<h4 id="添加SSH_Key到GitHub">添加SSH Key到GitHub</h4><p>在本机设置SSH Key之后，需要添加到GitHub上，以完成SSH链接的设置。</p>
+<ol>
+<li>打开本地C:\Documents and Settings\Administrator.ssh\id_rsa.pub文件。<br>在windows 7下地址是C:\User\用户名.ssh\id_rsa.pub<br>此文件里面内容为刚才生成密钥。如果看不到这个文件，你需要设置显示隐藏文件。准确的复制这个文件的内容，才能保证设置的成功。</li>
+<li>登陆github系统。点击右上角的 Account Settings—-&gt;SSH Public keys —-&gt; add another public keys</li>
+<li>把你本地生成的密钥复制到里面（key文本框中）， 点击 add key 就ok了</li>
+</ol>
 <h4 id="测试">测试</h4><p>可以输入下面的命令，看看设置是否成功，git@github.com的部分不要修改：</p>
 <pre><code><span class="variable">$ </span>ssh -<span class="constant">T </span>git<span class="variable">@github</span>.com
 </code></pre><p>如果是下面的反馈：</p>
-<p>The authenticity of host ‘github.com (207.97.227.239)’ can’t be established.<br>RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.<br>Are you sure you want to continue connecting (yes/no)?<br>不要紧张，输入yes就好，然后会看到：</p>
-<p>Hi cnfeat! You’ve successfully authenticated, but GitHub does not provide shell access.<br>设置用户信息<br>现在你已经可以通过SSH链接到GitHub了，还有一些个人信息需要完善的。</p>
+<pre><code>The authenticity <span class="keyword">of</span> host <span class="comment">'github.com (207.97.227.239)' can't be established.</span>
+RSA <span class="keyword">key</span> fingerprint <span class="keyword">is</span> <span class="number">16</span>:<span class="number">27</span>:ac:a5:<span class="number">76</span>:<span class="number">28</span>:<span class="number">2</span>d:<span class="number">36</span>:<span class="number">63</span>:<span class="number">1</span>b:<span class="number">56</span>:<span class="number">4</span>d:eb:df:a6:<span class="number">48.</span>
+Are you sure you want <span class="keyword">to</span> <span class="keyword">continue</span> connecting (yes/no)?
+</code></pre><p>不要紧张，输入yes就好，然后会看到：</p>
+<pre><code>Hi! You've successfully authenticated, <span class="keyword">but</span> GitHub <span class="keyword">does</span> <span class="keyword">not</span> provide shell access.
+</code></pre><h4 id="设置用户信息">设置用户信息</h4><p>现在你已经可以通过SSH链接到GitHub了，还有一些个人信息需要完善的。</p>
 <p>Git会根据用户的名字和邮箱来记录提交。GitHub也是用这些信息来做权限的处理，输入下面的代码进行个人信息的设置，把名称和邮箱替换成你自己的，名字必须是你的真名，而不是GitHub的昵称。</p>
-<p>$ git config —global user.name 用户名//用户名<br>$ git config —global user.email  用户名@gmail.com”//填写自己的邮箱<br>SSH Key配置成功<br>本机已成功连接到github。</p>
-<h4 id="使用GitHub_Pages建立博客">　使用GitHub Pages建立博客</h4><p>与GitHub建立好链接之后，就可以方便的使用它提供的Pages服务，GitHub Pages分两种，一种是你的GitHub用户名建立的username.github.io这样的用户&amp;组织页（站），另一种是依附项目的pages。</p>
+<pre><code>$ git config --global user<span class="class">.name</span> 用户名<span class="comment">//用户名</span>
+$ git config --global user<span class="class">.email</span>  用户名@gmail.com<span class="string">"//填写自己的邮箱</span>
+</code></pre><p>SSH Key配置成功<br>本机已成功连接到github。</p>
+<h3 id="使用GitHub_Pages建立博客">　使用GitHub Pages建立博客</h3><p>与GitHub建立好链接之后，就可以方便的使用它提供的Pages服务，GitHub Pages分两种，一种是你的GitHub用户名建立的username.github.io这样的用户&amp;组织页（站），另一种是依附项目的pages。</p>
 <p>想建立个人博客是用的第一种，形如cnfeat.github.io这样的可访问的站，每个用户名下面只能建立一个。</p>
 <p>github上建立仓库<br>登录后系统，在github首页，点击页面右下角「New Repository」并填写信息</p>
 <p>点击「Create Repository」 完成创建。</p>
-<h2 id="博客程序选择">博客程序选择</h2><h2 id="Hexo安装">Hexo安装</h2><h2 id="Hexo配置">Hexo配置</h2><h2 id="Hexo主题选择">Hexo主题选择</h2><h2 id="文章发布">文章发布</h2>
+<h2 id="博客程序选择">博客程序选择</h2><p>有好几种不同的程序可以用来在Github pages上建立静态博客。Github pages官方推荐Jekyll,Octopress是Jekyll的再开发，Hexo现在有越来越流行的趋势。<br>下面是对几种常用的静态博客程序的比较</p>
+<h3 id="Jekyll">Jekyll</h3><ul>
+<li>语言：Ruby </li>
+<li>优势：与Github pages官方合作。应用最广，有很好的文档，众多的模板和插件。 可以从wp移植博客。可以在github上更新博客。可以通过prose.io直接写博客。</li>
+<li>缺点： 模板基于liquid template engine，更改较复杂</li>
+<li>安装：稍复杂。再开发版本Jekyllboostrap可以在几分钟之内搞定博客，但是可选择主题较少</li>
+</ul>
+<h3 id="Octopress">Octopress</h3><ul>
+<li>语言：Ruby</li>
+<li>优势：基于Jekyll，为开发者使用，默认安装很多插件，更容易个性化各种设置。模板与插件与Jekyll互通。</li>
+<li>安装：与Jekyll相似</li>
+</ul>
+<h3 id="Hexo">Hexo</h3><ul>
+<li>语言：note.js</li>
+<li>优势：轻量静态博客，与以上相比速度更快，适合博客内容很多的用户。可以从多个平台（比如wp，joomla）移植博客。可以使用绝大多数octopress插件</li>
+<li>缺点：需要在本地更新博客</li>
+<li>安装：较简单</li>
+</ul>
+<p>其实我每个都装了一遍。。但最后还是选择了Hexo。为神马？因为觉得Hexo的一个主题好好看呐。。。<br>然后，速度快，听起来也不错</p>
+<h2 id="Hexo安装">Hexo安装</h2><h2 id="Hexo配置">Hexo配置</h2><h2 id="Hexo主题选择">Hexo主题选择</h2><h2 id="文章发布">文章发布</h2>
         
       
     </div>
