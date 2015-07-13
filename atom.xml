@@ -5,7 +5,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com//"/>
-  <updated>2015-06-28T22:37:52.218Z</updated>
+  <updated>2015-07-07T16:27:57.000Z</updated>
   <id>http://yoursite.com//</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2015/06/28/hexo/"/>
     <id>http://yoursite.com/2015/06/28/hexo/</id>
     <published>2015-06-28T09:16:03.000Z</published>
-    <updated>2015-06-28T22:37:52.218Z</updated>
+    <updated>2015-07-07T16:27:57.000Z</updated>
     <content type="html"><![CDATA[<p>在学习用github的时候偶然看见可以用github pages搭建博客，很感兴趣，毕竟要买服务器搭建独立博客的话，总是要考虑空间续费以及会不会被墙的问题。对于github是新手，即使看了很多教程也依然花了好些时间来熟悉操作。教程也并不是尽善尽美。 在终于搭建好以后，还是决定把步骤详细地记录一下，并附上自己的一些心得，万一哪天有一个跟我一样的小白用得上呢：）</p>
 <p>首先附上我参考的一些教程，感谢写下详细教程的各位。</p>
 <p><a href="http://www.jianshu.com/p/05289a4bc8b2" target="_blank" rel="external">如何搭建一个独立博客——简明Github Pages与Hexo教程</a></p>
@@ -37,6 +37,7 @@
 <h2 id="Github使用">Github使用</h2><p>假设你是跟我一样对Github不太熟悉的人，一些基本的Github知识或许对你有用。</p>
 <p>以下主要参考beiyuu的《使用Github Pages建独立博客》写成。或者你可以直接查看cnfeat的<a href="http://www.jianshu.com/p/05289a4bc8b2" target="_blank" rel="external">如何搭建一个独立博客——简明Github Pages与Hexo教程</a>的github配置部分。这里大部分直接引用，有少量修改</p>
 <h3 id="Git安装">Git安装</h3><p>你可以先下载<a href="http://git-scm.com/" target="_blank" rel="external">git</a>。git是一个开源的版本控制软件。安装成功以后打开Git Bash可以用来输入指令跟Github内容同步<br>然后可以登陆Github <a href="https://github.com/" target="_blank" rel="external">https://github.com/</a>  注册一个账号。注意如果你不购买自己的域名的话，你的账户名.github.io将成为你的博客地址。</p>
+<a id="more"></a>  
 <h3 id="配置SSH_keys">配置SSH keys</h3><p>我们如何让本地git项目与远程的github建立联系呢？用SSH keys。</p>
 <h4 id="检查SSH_keys的设置">检查SSH keys的设置</h4><p>首先我们需要检查你电脑上现有的ssh key：</p>
 <pre><code>$ <span class="built_in">cd</span> ~/.ssh <span class="comment">#检查本机的ssh密钥</span>
@@ -65,7 +66,7 @@ Are you sure you want <span class="keyword">to</span> <span class="keyword">cont
 </code></pre><p>不要紧张，输入yes就好，然后会看到：</p>
 <pre><code>Hi! You've successfully authenticated, <span class="keyword">but</span> GitHub <span class="keyword">does</span> <span class="keyword">not</span> provide shell access.
 </code></pre><h4 id="设置用户信息">设置用户信息</h4><p>现在你已经可以通过SSH链接到GitHub了，还有一些个人信息需要完善的。</p>
-<p>Git会根据用户的名字和邮箱来记录提交。GitHub也是用这些信息来做权限的处理，输入下面的代码进行个人信息的设置，把名称和邮箱替换成你自己的，名字必须是你的真名，而不是GitHub的昵称。</p>
+<p>Git会根据用户的名字和邮箱来记录提交。GitHub也是用这些信息来做权限的处理，输入下面的代码进行个人信息的设置，把名称和邮箱替换成你自己的</p>
 <pre><code>$ git config --global user<span class="class">.name</span> 用户名<span class="comment">//用户名</span>
 $ git config --global user<span class="class">.email</span>  用户名@gmail.com<span class="string">"//填写自己的邮箱</span>
 </code></pre><p>SSH Key配置成功<br>本机已成功连接到github。</p>
@@ -91,10 +92,72 @@ $ git config --global user<span class="class">.email</span>  用户名@gmail.com
 <li>缺点：需要在本地更新博客</li>
 <li>安装：较简单</li>
 </ul>
-<p>其实我每个都装了一遍。。但最后还是选择了Hexo。为神马？因为觉得Hexo的一个主题好好看呐。。。<br>然后，速度快，听起来也不错</p>
-<h2 id="Hexo安装">Hexo安装</h2><h2 id="Hexo配置">Hexo配置</h2><h2 id="Hexo主题选择">Hexo主题选择</h2><h2 id="文章发布">文章发布</h2>]]></content>
+<p>其实我每个都装了一遍。。但最后还是选择了Hexo。为神马？因为觉得Hexo的一个主题好好看呐。。。<br>然后，在想象中自己一定会写很多东西，所以一定需要速度很快 </p>
+<h2 id="Hexo安装和配置">Hexo安装和配置</h2><h3 id="hexo安装">hexo安装</h3><p>打开git bash,输入</p>
+<pre><code>$ npm <span class="keyword">install</span> -g hexo
+</code></pre><p>在我的电脑中建立一个名字叫「Hexo」的文件夹(或者别的名字也可以)，然后在此文件夹中右键打开Git Bash。然后输入</p>
+<pre><code><span class="variable">$ </span>hexo init       <span class="comment">#初始化hexo到指定目录</span>
+<span class="variable">$ </span>hexo generate   <span class="comment">#在目录下生成静态网页</span>
+<span class="variable">$ </span>hexo server     <span class="comment">#运行本地服务</span>
+</code></pre><p>这个时候hexo已经用默认模板搭建好了博客，浏览器输入<a href="http://localhost:4000就可以看到效果。" target="_blank" rel="external">http://localhost:4000就可以看到效果。</a></p>
+<h3 id="Hexo_配置">Hexo 配置</h3><p>可以在Hexo文件夹里的_config.yml里面对Hexo进行设置:<br>Hexo有三层</p>
+<ul>
+<li>post    source/_posts  帖子</li>
+<li>page    source   页面</li>
+<li>draft    source/_drafts   草稿</li>
+</ul>
+<p>新生成帖子的时候，默认文件名为帖子主题名，但是你也可以设定为时间加上主题名，与最主流的github静态博客Jekyll格式保持一致</p>
+<pre><code><span class="symbol">new_post_name:</span> <span class="symbol">:year-</span><span class="symbol">:month-</span><span class="symbol">:day-</span><span class="symbol">:title</span>.md <span class="comment"># File name of new posts</span>
+</code></pre><p>设置deploy可以一键将博客内容部署到github上</p>
+<pre><code><span class="attribute">deploy</span>:
+<span class="attribute">type</span>: git   #部署类型, 本文使用Github
+<span class="attribute">repository</span>: git<span class="variable">@github</span>.<span class="attribute">com</span>:username/username.github.io.git  #部署的仓库的SSH
+<span class="attribute">branch</span>: master   #部署分支,一般使用master主分支
+</code></pre><p>Hexo还支持安装各种插件，比如说rss订阅 hexo-generator-feed<br>可以在hexo官网上找到列表</p>
+<h3 id="Hexo主题选择">Hexo主题选择</h3><p>Hexo官网提供了不少主题 <a href="https://hexo.io/themes/" target="_blank" rel="external">https://hexo.io/themes/</a> </p>
+<p>知乎上有个不错的讨论，谈到了hexo各个主题的优缺点<br><a href="http://www.zhihu.com/question/24422335" target="_blank" rel="external">http://www.zhihu.com/question/24422335</a></p>
+<p>这里我选择了国人开发的Next，很喜欢它简单优雅<br><a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">https://github.com/iissnan/hexo-theme-next</a></p>
+<p>以此为例如何安装主题。</p>
+<pre><code><span class="variable">$ </span>cd <span class="constant">Hexo </span> <span class="comment">#进入你安装hexo的文件夹</span>
+<span class="variable">$ </span>git clone <span class="symbol">https:</span>/<span class="regexp">/github.com/iissnan</span><span class="regexp">/hexo-theme-next themes/next</span>  <span class="comment">#克隆主题到theme文件夹下</span>
+</code></pre><p>然后更改站点 _config.yml 中的 theme 字段设置为 next<br>用Next 主题的好处还有作者是中国人，有非常详尽的文档，帮助配置主题。</p>
+<p>更改了主题以后，可以使用<br>    $ hexo generate   #在目录下生成静态网页<br>    $ hexo server     #运行本地服务<br>查看效果</p>
+<h3 id="开始写文章">开始写文章</h3><pre><code>hexo <span class="keyword">new</span> <span class="string">"postName"</span>  <span class="preprocessor">#新建博文,其中postName是博文题目</span>
+</code></pre><p>博文会自动生成在博客目录下source/_posts\postName.md</p>
+<pre><code><span class="preprocessor">#文件自动生成格式:</span>
+<span class="label">title:</span> <span class="string">"It Starts with iGaze: Visual Attention Driven Networkingwith Smart Glasses"</span>  <span class="preprocessor">#博文题目</span>
+<span class="label">date:</span> <span class="number">2014</span>-<span class="number">11</span>-<span class="number">21</span> <span class="number">11</span>:<span class="number">25</span>:<span class="number">38</span>      <span class="preprocessor">#生成时间</span>
+<span class="label">tags:</span> Paper                    <span class="preprocessor">#标签, 多个标签使用格式[Paper1, Paper2, Paper3,...]</span>
+<span class="label">categories:</span> cate1              <span class="preprocessor">#分类</span>
+</code></pre><p>接下来可以用markdownPad之类直接进行编辑。<br>如果不想博文在首页全部显示, 并能出现阅读全文按钮效果, 需要在你想在首页显示的部分下添加<!--more--></p>
+<pre><code>此处及以上的内容会在首页显示
+<span class="comment">&lt;!--more--&gt;</span>   
+一下是在首页隐藏的部分
+</code></pre><p>文章写好以后，如果已经在hexo的config里面设置过deploy，可以使用命令</p>
+<pre><code><span class="variable">$ </span>hexo generate   <span class="comment">#在目录下生成静态网页</span>
+<span class="variable">$ </span>hexo deploy     <span class="comment">#部署到站点</span>
+</code></pre><p>发布到博客地址 username.github.io</p>
+<p>hexo也支持缩略命令，所以也可以使用<br>    $ hexo g —d      #生成并部署</p>
+<p>如此一个独立的静态博客就做好了</p>
+]]></content>
     <summary type="html">
-    <![CDATA[<p>在学习用github的时候偶然看见可以用github pages搭建博客，很感兴趣，毕竟要买服务器搭建独立博客的话，总是要考虑空间续费以及会不会被墙的问题。对于github是新手，即使看了很多教程也依然花了好些时间来熟悉操作。教程也并不是尽善尽美。 在终于搭建好以后，还是决]]>
+    <![CDATA[<p>在学习用github的时候偶然看见可以用github pages搭建博客，很感兴趣，毕竟要买服务器搭建独立博客的话，总是要考虑空间续费以及会不会被墙的问题。对于github是新手，即使看了很多教程也依然花了好些时间来熟悉操作。教程也并不是尽善尽美。 在终于搭建好以后，还是决定把步骤详细地记录一下，并附上自己的一些心得，万一哪天有一个跟我一样的小白用得上呢：）</p>
+<p>首先附上我参考的一些教程，感谢写下详细教程的各位。</p>
+<p><a href="http://www.jianshu.com/p/05289a4bc8b2">如何搭建一个独立博客——简明Github Pages与Hexo教程</a></p>
+<p><a href="http://andrewliu.tk/2014/11/21/通过Hexo在Github上搭建博客教程">通过Hexo在Github上搭建博客教程</a></p>
+<h2 id="为何选择Github_pages">为何选择Github pages</h2><ul>
+<li>有三百兆免费空间并且相当稳定</li>
+<li>对于学习写程序的人，是一个不错的练习Github的机会</li>
+<li>用markdown写博客，更方便控制博客，更加灵活</li>
+<li>时刻保持博客备份</li>
+<li>与其他的github上项目相结合</li>
+</ul>
+<p>如果Github在国内被墙呢？可以选择用国内版本的github：gitcafe。据说访问速度比github更快。</p>
+<p><a href="https://pages.github.com/">Githup pages</a><br>是用户编写的、托管在github上的静态网页。它可以用来做你的项目网站，也可以用来做博客。</p>
+<h2 id="Github使用">Github使用</h2><p>假设你是跟我一样对Github不太熟悉的人，一些基本的Github知识或许对你有用。</p>
+<p>以下主要参考beiyuu的《使用Github Pages建独立博客》写成。或者你可以直接查看cnfeat的<a href="http://www.jianshu.com/p/05289a4bc8b2">如何搭建一个独立博客——简明Github Pages与Hexo教程</a>的github配置部分。这里大部分直接引用，有少量修改</p>
+<h3 id="Git安装">Git安装</h3><p>你可以先下载<a href="http://git-scm.com/">git</a>。git是一个开源的版本控制软件。安装成功以后打开Git Bash可以用来输入指令跟Github内容同步<br>然后可以登陆Github <a href="https://github.com/">https://github.com/</a>  注册一个账号。注意如果你不购买自己的域名的话，你的账户名.github.io将成为你的博客地址。</p>]]>
+    
     </summary>
     
       <category term="github hexo blog" scheme="http://yoursite.com/tags/github-hexo-blog/"/>
